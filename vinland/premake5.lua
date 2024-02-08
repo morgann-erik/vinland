@@ -10,4 +10,4 @@ project "VinlandCore"
     includedirs {"%{prj.location}/include/vinland"}
     files {"%{prj.location}/src/**.c"}
     
-    buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic", "-Wmissing-prototypes", "-Wstrict-prototypes"}
+    buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic"}
