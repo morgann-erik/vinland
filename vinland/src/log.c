@@ -5,9 +5,13 @@
 static enum LogLevel currentLevel;
 static FILE *fileSink;
 
+void v_SetLogLevel(enum LogLevel value) {
+    currentLevel = value;
+}
+
 void v_Log(const char *f, const int lvl, const int l, 
            const char *msg) {
-  if (currentLevel > l) {
+  if (currentLevel > lvl) {
     return;
   }
 
@@ -23,10 +27,10 @@ void v_Log(const char *f, const int lvl, const int l,
   tz = localtime(&raw_now);
   strftime(now, 24, "%H:%M:%S", tz);
 
-  printf("[%s %s %s:%d] %s", now, lvlStr, f, l, msg);
+  printf("[%s %s %s:%d] %s\n", now, lvlStr, f, l, msg);
 
   if (!fileSink) {
     return;
   }
-  fprintf(fileSink, "[%s %s %s:%d] %s", now, lvlStr, f, l, msg);
+  fprintf(fileSink, "[%s %s %s:%d] %s\n", now, lvlStr, f, l, msg);
 }
