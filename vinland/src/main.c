@@ -1,5 +1,5 @@
-#include <stdio.h>
+#include "log.h"
 int main(void) {
-    printf("Hello world!");
+    v_Log(__FILE__, DEBUG, __LINE__, "TEST");
     return 0;
 }
