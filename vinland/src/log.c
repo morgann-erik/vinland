@@ -8,7 +8,8 @@ static FILE *fileSink;
 
 void v_SetLogLevel(enum LogLevel value) { currentLevel = value; }
 
-void v_Log(const char *f, const int lvl, const int l, const char *msg) {
+void v_Log(const char *f, const enum LogLevel lvl, const int l,
+           const char *msg) {
   if (currentLevel > lvl) {
     return;
   }
@@ -35,15 +36,15 @@ void v_Log(const char *f, const int lvl, const int l, const char *msg) {
 }
 
 void v_InitFileSink() {
-    fileSink = fopen("log.txt", "a");
-    if (!fileSink) {
-        perror("Failed to initialise file sink");
-        exit(EXIT_FAILURE);
-    }
+  fileSink = fopen("log.txt", "a");
+  if (!fileSink) {
+    perror("Failed to initialise file sink");
+    exit(EXIT_FAILURE);
+  }
 }
 void v_CleanUpFileSink() {
-    if (fileSink) {
-        fclose(fileSink);
-        fileSink = NULL;
-    }
+  if (fileSink) {
+    fclose(fileSink);
+    fileSink = NULL;
+  }
 }
