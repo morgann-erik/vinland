@@ -7,7 +7,7 @@ project "VinlandCore"
 
     links {}
 
-    includedirs {"%{prj.location}/include"}
+    includedirs {"%{prj.location}/include/vinland"}
     files {"%{prj.location}/src/**.c"}
     
     buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic", "-Wmissing-prototypes", "-Wstrict-prototypes"}
