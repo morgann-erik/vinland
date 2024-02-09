@@ -1,5 +1,5 @@
 project "VinlandCore"
-    kind "ConsoleApp"
+    kind "StaticLib"
     language "C"
     cdialect "C99"
     targetdir ("%{wks.location}/bin/" .. outDir)
@@ -7,7 +7,9 @@ project "VinlandCore"
 
     links {}
 
-    includedirs {"%{prj.location}/include/vinland"}
+    includedirs {"%{prj.location}/include", "%{prj.location}/vendor/flecs/include"}
     files {"%{prj.location}/src/**.c"}
     
     buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic"}
+
+include "vendor"

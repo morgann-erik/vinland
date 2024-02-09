@@ -1,2 +1,4 @@
 -I
-include/vinland/
+include/
+-I
+vendor/flecs/include

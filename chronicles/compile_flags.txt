@@ -1,0 +1,6 @@
+-I
+include
+-I
+../vinland/vendor/flecs/include
+-I
+../vinland/include
