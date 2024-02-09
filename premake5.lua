@@ -5,6 +5,7 @@ workspace "Vinland"
 outDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}-%{prj.name}"
 
 include "vinland"
+include "chronicles"
 
 filter "configurations:Debug"
     defines "V_DEBUG"
