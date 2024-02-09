@@ -1,7 +1,7 @@
 # v0.1.0
 
-- Simple logger
-- Add FLECS
+- X Simple logger
+- X Add FLECS
 - Add raylib
 - Implement raylib basics
     - ecs driven init
