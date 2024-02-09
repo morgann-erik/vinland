@@ -1,6 +1,12 @@
-#include "vinland/log.h"
+#include "flecs.h"
+#include "vinland/vinland.h"
+
 int main(void) {
-  V_LogInfo("TEST");
+    ecs_world_t *world;
+
+    world = V_InitCore();
+    V_Run(world);
+    V_CleanUp();
 
   return 0;
 }

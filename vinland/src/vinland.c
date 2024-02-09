@@ -1,7 +1,17 @@
 #include "vinland/vinland.h"
+#include "flecs.h"
+#include "vinland/internal/ecs.h"
+#include "vinland/log.h"
 
-void V_Init() {}
+ecs_world_t *V_InitCore() {
+  ecs_world_t *world;
 
-void V_Start() {}
+  V_LogInfo("VinlandCore v0.1.0");
 
-void V_CleanUp() {}
+  world = v_InitEcs();
+  return world;
+}
+
+void V_Run(ecs_world_t *world) {}
+
+void V_CleanUp() { v_CleanUpEcs(); }

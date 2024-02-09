@@ -1,4 +1,4 @@
 -I
-include
+include/
 -I
 vendor/flecs/include
