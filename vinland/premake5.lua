@@ -11,3 +11,5 @@ project "VinlandCore"
     files {"%{prj.location}/src/**.c"}
     
     buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic"}
+
+include "vendor"
