@@ -1,0 +1,3 @@
+[submodule "vinland/vendor/flecs"]
+	path = vinland/vendor/flecs
+	url = https://github.com/morgann-erik/flecs.git
