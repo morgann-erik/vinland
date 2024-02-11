@@ -1,6 +1,8 @@
 -I
 include
 -I
+../vinland/include
+-I
 ../vinland/vendor/flecs/include
 -I
-../vinland/include
+../vinland/vendor/raylib/src
