@@ -8,6 +8,7 @@ void Render(ecs_iter_t *it) {
   BeginDrawing();
 
   ClearBackground(WHITE);
+
   for (int i = 0; i < it->count; i++) {
     DrawCircle(p[i].x, p[i].y, 16, RED);
   }

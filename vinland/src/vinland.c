@@ -28,13 +28,15 @@ ecs_world_t *V_InitCore() {
   ecs_entity_t t = ecs_new_entity(world, "t");
   ecs_set(world, t, V_Position, {.x = 0, .y = 0});
 
+  V_LogInfo("Vinland Core initialsed");
+
   return world;
 }
 
 void V_Run(ecs_world_t *world) {
   do {
     ecs_progress(world, 60);
-  }while (!WindowShouldClose());
+  } while (!WindowShouldClose());
 }
 
 void V_CleanUp() { v_CleanUpEcs(); }
