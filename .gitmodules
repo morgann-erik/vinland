@@ -1,3 +1,6 @@
 [submodule "vinland/vendor/flecs"]
 	path = vinland/vendor/flecs
 	url = https://github.com/morgann-erik/flecs.git
+[submodule "vinland/vendor/raylib"]
+	path = vinland/vendor/raylib
+	url = https://github.com/morgann-erik/raylib.git

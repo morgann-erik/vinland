@@ -7,7 +7,7 @@ project "VinlandCore"
 
     links {}
 
-    includedirs {"%{prj.location}/include", "%{prj.location}/vendor/flecs/include"}
+    includedirs {"%{prj.location}/include", "%{prj.location}/vendor/flecs/include", "%{prj.location}/vendor/raylib/src"}
     files {"%{prj.location}/src/**.c"}
     
     buildoptions {"-std=c99", "-Wall", "-Wextra", "-pedantic"}

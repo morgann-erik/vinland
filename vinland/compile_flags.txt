@@ -2,3 +2,5 @@
 include/
 -I
 vendor/flecs/include
+-I
+../vinland/vendor/raylib/src
