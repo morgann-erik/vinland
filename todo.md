@@ -2,14 +2,14 @@
 
 - X Simple logger
 - X Add FLECS
-- Add raylib
-- Implement raylib basics
-    - ecs driven init
-    - renderer
-    - grid system
+- X Add raylib
+- > Implement raylib basics
+    - X ecs driven init
+    - X renderer
 - Input system
 
 # v0.2.0
 
-- UI 
 - asset manager
+- grid system
+- UI 
