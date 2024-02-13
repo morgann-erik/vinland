@@ -6,10 +6,11 @@
 - > Implement raylib basics
     - X ecs driven init
     - X renderer
-- Input system
+- X Input system
 
 # v0.2.0
 
+- action system
 - asset manager
-- grid system
+- grid system for renderer
 - UI 

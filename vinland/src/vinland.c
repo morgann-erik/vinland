@@ -6,6 +6,7 @@
 #include "vinland/internal/ecs.h"
 #include "vinland/internal/modules/core.h"
 #include "vinland/internal/modules/renderer.h"
+#include "vinland/internal/modules/input.h"
 #include "vinland/log.h"
 
 extern ECS_COMPONENT_DECLARE(v_ApplicationSpecs);
@@ -19,6 +20,7 @@ ecs_world_t *V_InitCore() {
   world = v_InitEcs();
 
   ECS_IMPORT(world, v_CoreModule);
+  ECS_IMPORT(world, v_InputModule);
   ECS_IMPORT(world, v_RendererModule);
 
   ecs_entity_t e = ecs_new_entity(world, "AppSpecs");
@@ -34,8 +36,9 @@ ecs_world_t *V_InitCore() {
 }
 
 void V_Run(ecs_world_t *world) {
-  do {
     ecs_progress(world, 60);
+  do {
+    ecs_progress(world, GetTime());
   } while (!WindowShouldClose());
 }
 
