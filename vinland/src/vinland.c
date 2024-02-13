@@ -30,7 +30,7 @@ ecs_world_t *V_InitCore() {
   ecs_entity_t t = ecs_new_entity(world, "t");
   ecs_set(world, t, V_Position, {.x = 0, .y = 0});
 
-  V_LogInfo("Vinland Core initialsed");
+  V_LogInfo("Vinland Core initialsed\n");
 
   return world;
 }

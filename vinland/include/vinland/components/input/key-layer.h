@@ -5,7 +5,7 @@
 typedef struct V_KeyLayer {
   char *Id;
 
-  V_KeyBinding *bindings;
+  V_KeyBinding *Bindings;
   int BindingCount;
 } V_KeyLayer;
 

@@ -1,8 +1,10 @@
 #ifndef V_KEY_BINDING
 #define V_KEY_BINDING
 
+#include "vinland/components/input/key.h"
+
 typedef struct V_KeyBinding {
-  enum V_Key *Keys;
+  V_Key *Keys;
   int KeyCount;
 
   char *ActionName;
