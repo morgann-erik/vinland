@@ -10,7 +10,7 @@ extern ECS_COMPONENT_DECLARE(v_KeyboardState);
 void v_ProcessKeyboardInput(ecs_iter_t *it) {
   v_KeyboardState *state = ecs_field(it, v_KeyboardState, 1);
 
-  enum KeyState keyState;
+  KeyState keyState;
   for (int i = 0; i < v_KEYMAP_SIZE; i++) {
     keyState = state->Keys[i];
 
