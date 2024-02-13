@@ -1,16 +1,20 @@
 #include "vinland/internal/modules/input.h"
 #include "flecs.h"
 #include "flecs/addons/flecs_c.h"
+#include "vinland/components/input/key-layer.h"
 #include "vinland/internal/components/input/keyboard-state.h"
 #include "vinland/internal/input/keyboard-processor.h"
 #include "vinland/log.h"
 
 ECS_COMPONENT_DECLARE(v_KeyboardState);
+ECS_COMPONENT_DECLARE(V_KeyLayer);
 
 void v_InputModuleImport(ecs_world_t *world) {
   ECS_MODULE(world, V_InputModule);
 
   ECS_COMPONENT_DEFINE(world, v_KeyboardState);
+  ECS_COMPONENT_DEFINE(world, V_KeyLayer);
+
   ecs_system(world, {.entity = ecs_entity(
                          world, {.name = "Keyboard Processor",
                                  .add = {ecs_dependson(EcsOnUpdate)}}),
