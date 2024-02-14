@@ -10,7 +10,8 @@
 
 # v0.2.0
 
-- action system
-- asset manager
+- X action system
+- asset manager (sprites)
+- asset manager (atlas)
 - grid system for renderer
 - UI 
