@@ -16,22 +16,18 @@ void v_ProcessKeyboardInput(ecs_iter_t *it) {
 
     if (state->Keys[i] == v_KEY_UP) {
       state->Keys[i] = v_KEY_RELEASED;
-      printf("KeyReleased %d\n", i);
       continue;
     }
     if (IsKeyDown(i) && state->Keys[i] == v_KEY_DOWN) {
       state->Keys[i] = v_KEY_PRESSED;
-      printf("KeyPressed %d\n", i);
       continue;
     }
     if (IsKeyDown(i) && state->Keys[i] == v_KEY_RELEASED) {
       state->Keys[i] = v_KEY_DOWN;
-      printf("KeyDown %d\n", i);
       continue;
     }
     if (IsKeyUp(i) && state->Keys[i] != v_KEY_RELEASED) {
       state->Keys[i] = v_KEY_UP;
-      printf("KeyUp %d\n", i);
       continue;
     }
   }
