@@ -9,7 +9,7 @@
 #include "vinland/log.h"
 #include <stdbool.h>
 
-#define BINDING_TRIGGERED_MSG "Binding triggered: Action "
+#define BINDING_TRIGGERED_MSG "Binding triggered: Action"
 
 extern ECS_COMPONENT_DECLARE(V_KeyLayer);
 
@@ -34,8 +34,9 @@ void v_CheckActiveKeyLayers(ecs_iter_t *it) {
       }
 
       if (ok) {
-        V_LogDebug(BINDING_TRIGGERED_MSG);
-        V_Action action = {.Name = "Test"};
+        V_LogDebugf("%s %s", BINDING_TRIGGERED_MSG, b.ActionName)
+
+        V_Action action = {.Name = b.ActionName};
         reg[0] = V_AddAction(reg[0], action);
       }
     }

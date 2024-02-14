@@ -1,6 +1,7 @@
 #ifndef V_LOG
 #define V_LOG
 
+#include <stdio.h>
 enum LogLevel { DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, FATAL = 4 };
 
 #define V_LogDebug(msg) v_Log(__FILE__, DEBUG, __LINE__, msg)
@@ -8,6 +9,45 @@ enum LogLevel { DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, FATAL = 4 };
 #define V_LogWarning(msg) v_Log(__FILE__, WARNING, __LINE__, msg)
 #define V_LogError(msg) v_Log(__FILE__, ERROR, __LINE__, msg)
 #define V_LogFatal(msg) v_Log(__FILE__, FATAL, __LINE__, msg)
+
+#define V_LogDebugf(format, ...)                                               \
+  ;                                                                            \
+  {                                                                            \
+    char msg[1024];                                                            \
+    sprintf(msg, format, __VA_ARGS__);                                         \
+    v_Log(__FILE__, DEBUG, __LINE__, msg);                                     \
+  }
+#define V_LogInfof(format, ...)                                                \
+  ;                                                                            \
+  {                                                                            \
+    char msg[1024];                                                            \
+    sprintf(msg, format, __VA_ARGS__);                                         \
+    v_Log(__FILE__, INFO, __LINE__, msg);                                      \
+  }
+
+#define V_LogWarningf(format, ...)                                             \
+  ;                                                                            \
+  {                                                                            \
+    char msg[1024];                                                            \
+    sprintf(msg, format, __VA_ARGS__);                                         \
+    v_Log(__FILE__, WARNING, __LINE__, msg);                                   \
+  }
+
+#define V_LogErrorf(format, ...)                                               \
+  ;                                                                            \
+  {                                                                            \
+    char msg[1024];                                                            \
+    sprintf(msg, format, __VA_ARGS__);                                         \
+    v_Log(__FILE__, ERROR, __LINE__, msg);                                     \
+  }
+
+#define V_LogFatalf(format, ...)                                               \
+  ;                                                                            \
+  {                                                                            \
+    char msg[1024];                                                            \
+    sprintf(msg, format, __VA_ARGS__);                                         \
+    v_Log(__FILE__, FATAL, __LINE__, msg);                                     \
+  }
 
 void v_SetLogLevel(enum LogLevel value);
 /* TODO

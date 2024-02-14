@@ -22,7 +22,6 @@ V_ActionRegistry V_NewActionRegistry() {
 V_ActionRegistry V_AddAction(V_ActionRegistry reg, V_Action action) {
 
   if (reg.Count == reg.Size) {
-    printf("%d count == %d size", reg.Count, reg.Size);
     V_LogDebug("Extending registry size");
 
     reg.Actions =

@@ -36,12 +36,10 @@ void v_ProcessKeyboardInput(ecs_iter_t *it) {
   for (int i = 0; i < v_KEYMAP_SIZE; i++) {
     keyState = state->Keys[i];
     if (keyState == v_KEY_UP) {
-      printf("KeyIdle %d\n", i);
       state->Keys[i] = v_KEY_RELEASED;
       continue;
     }
     if (keyState == v_KEY_DOWN) {
-      printf("KeyUp %d\n", i);
       state->Keys[i] = v_KEY_UP;
     }
   }
@@ -52,7 +50,6 @@ void v_ProcessKeyboardInput(ecs_iter_t *it) {
 
   while (keyId != 0) {
     if (state->Keys[keyId] == v_KEY_RELEASED) {
-      printf("KeyDown %d\n", keyId);
       state->Keys[keyId] = v_KEY_DOWN;
       break;
     }
