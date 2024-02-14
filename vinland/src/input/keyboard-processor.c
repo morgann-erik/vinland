@@ -10,28 +10,24 @@ extern ECS_COMPONENT_DECLARE(v_KeyboardState);
 void v_ProcessKeyboardInput(ecs_iter_t *it) {
   v_KeyboardState *state = ecs_field(it, v_KeyboardState, 1);
 
-  enum KeyState keyState;
+  KeyState keyState;
   for (int i = 0; i < v_KEYMAP_SIZE; i++) {
     keyState = state->Keys[i];
 
     if (state->Keys[i] == v_KEY_UP) {
       state->Keys[i] = v_KEY_RELEASED;
-      printf("KeyReleased %d\n", i);
       continue;
     }
     if (IsKeyDown(i) && state->Keys[i] == v_KEY_DOWN) {
       state->Keys[i] = v_KEY_PRESSED;
-      printf("KeyPressed %d\n", i);
       continue;
     }
     if (IsKeyDown(i) && state->Keys[i] == v_KEY_RELEASED) {
       state->Keys[i] = v_KEY_DOWN;
-      printf("KeyDown %d\n", i);
       continue;
     }
     if (IsKeyUp(i) && state->Keys[i] != v_KEY_RELEASED) {
       state->Keys[i] = v_KEY_UP;
-      printf("KeyUp %d\n", i);
       continue;
     }
   }
@@ -40,12 +36,10 @@ void v_ProcessKeyboardInput(ecs_iter_t *it) {
   for (int i = 0; i < v_KEYMAP_SIZE; i++) {
     keyState = state->Keys[i];
     if (keyState == v_KEY_UP) {
-      printf("KeyIdle %d\n", i);
       state->Keys[i] = v_KEY_RELEASED;
       continue;
     }
     if (keyState == v_KEY_DOWN) {
-      printf("KeyUp %d\n", i);
       state->Keys[i] = v_KEY_UP;
     }
   }
@@ -56,7 +50,6 @@ void v_ProcessKeyboardInput(ecs_iter_t *it) {
 
   while (keyId != 0) {
     if (state->Keys[keyId] == v_KEY_RELEASED) {
-      printf("KeyDown %d\n", keyId);
       state->Keys[keyId] = v_KEY_DOWN;
       break;
     }
