@@ -7,6 +7,7 @@
 #include "vinland/internal/input/keyboard-processor.h"
 #include "vinland/log.h"
 
+extern ECS_COMPONENT_DECLARE(V_ActionRegistry);
 ECS_COMPONENT_DECLARE(v_KeyboardState);
 ECS_COMPONENT_DECLARE(V_KeyLayer);
 
@@ -27,10 +28,11 @@ void v_InputModuleImport(ecs_world_t *world) {
                          world, {.name = "Keyboard Layer Manager",
                                  .add = {ecs_dependson(EcsOnUpdate)}}),
                      .query.filter.terms = {{.id = ecs_id(V_KeyLayer)},
-
                                             {.id = ecs_id(v_KeyboardState),
-                                             .src = ecs_id(v_KeyboardState)}},
-        .query.filter.instanced = true,
+                                             .src = ecs_id(v_KeyboardState)},
+                                            {.id = ecs_id(V_ActionRegistry),
+                                             .src = ecs_id(V_ActionRegistry)}},
+                     .query.filter.instanced = true,
                      .callback = v_CheckActiveKeyLayers});
 
   ecs_singleton_set(world, v_KeyboardState, {.Keys = {}});
