@@ -18,3 +18,4 @@
 - UI 
 
 # v0.3.0
+- tool for sprite/atlas management
