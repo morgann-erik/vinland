@@ -12,9 +12,19 @@ V_List *V_List_New(void *data) {
   return node;
 }
 
-void V_List_Insert(V_List *head, void *data) {
+void V_List_Add(V_List *head, void *data) {
+  if (head == NULL) {
+    head = V_List_New(data);
+    return;
+  }
+
+  if (head->data == NULL) {
+    head->data = data;
+    return;
+  }
+
   struct V_Node *newNode = (struct V_Node *)malloc(sizeof(struct V_Node));
-  if (!newNode) {
+  if (newNode == NULL) {
     V_LogFatal("Out of memory");
     exit(-1);
   }
@@ -22,7 +32,7 @@ void V_List_Insert(V_List *head, void *data) {
   newNode->data = data;
   newNode->next = NULL;
 
-  if (!head->next) {
+  if (head->next == NULL) {
     head->next = newNode;
     return;
   }
@@ -35,7 +45,7 @@ void V_List_Insert(V_List *head, void *data) {
   current->next = newNode;
 }
 
-V_List *V_List_Delete(V_List *head, struct V_Node *node) {
+V_List *V_List_Remove(V_List *head, struct V_Node *node) {
   if (head == NULL || node == NULL) {
     V_LogError("Attempting to delete list element that doesn't exist");
     return head;
@@ -88,7 +98,6 @@ struct V_Node *V_List_GetAt(V_List *head, int index) {
     return head;
   }
 
-  V_LogDebugf("%d >= %d", count, index);
   if (count <= index) {
     V_LogFatal("Index out of bounds");
     return NULL;
@@ -117,3 +126,4 @@ V_List *V_List_Clear(V_List *head) {
 
   return NULL;
 }
+

@@ -1,6 +1,5 @@
 #include "vinland/core/map.h"
 #include "vinland/core/list.h"
-#include "vinland/log.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
