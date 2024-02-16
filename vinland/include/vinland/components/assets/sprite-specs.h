@@ -2,7 +2,8 @@
 #define V_SPRITE_SPECS
 
 typedef struct V_SpriteSpecs {
-    char* path;
+    char *Id;
+    char* Path;
 } V_SpriteSpecs;
 
 #endif
