@@ -11,11 +11,12 @@
 # v0.2.0
 
 - X action system
-- asset manager (sprites)
+- X asset manager (sprites)
 - asset manager (atlas)
-- test suite
+- sprites and layers
 - grid system for renderer
 - UI 
 
 # v0.3.0
+- test suite
 - tool for sprite/atlas management
