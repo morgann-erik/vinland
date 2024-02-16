@@ -18,6 +18,9 @@ void v_AssetsModuleImport(ecs_world_t *world) {
   v_SpriteRegistry reg = v_NewSpriteRegistry();
   ecs_singleton_set(world, v_SpriteRegistry, {.map = reg.map});
 
+  /*
+   * Turn into an observer
+   */
   ecs_system(world, {.entity = ecs_entity(
                          world, {.name = "Sprite Loader",
                                  .add = {ecs_dependson(EcsOnUpdate)}}),
