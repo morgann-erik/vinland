@@ -13,5 +13,8 @@
 - X action system
 - asset manager (sprites)
 - asset manager (atlas)
+- test suite
 - grid system for renderer
 - UI 
+
+# v0.3.0
