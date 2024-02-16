@@ -7,6 +7,7 @@
 #include "vinland/internal/modules/core.h"
 #include "vinland/internal/modules/renderer.h"
 #include "vinland/internal/modules/input.h"
+#include "vinland/internal/modules/assets.h"
 #include "vinland/log.h"
 
 extern ECS_COMPONENT_DECLARE(v_ApplicationSpecs);
@@ -20,6 +21,7 @@ ecs_world_t *V_InitCore() {
   world = v_InitEcs();
 
   ECS_IMPORT(world, v_CoreModule);
+  ECS_IMPORT(world, v_AssetsModule);
   ECS_IMPORT(world, v_InputModule);
   ECS_IMPORT(world, v_RendererModule);
 
